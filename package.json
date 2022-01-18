@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "inquirer": "^8.2.0",
+    "puppeteer": "^13.1.0"
+  },
+  "scripts": {
+    "start": "node index"
+  }
+}
