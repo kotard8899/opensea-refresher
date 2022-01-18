@@ -1,2 +1,2 @@
 # opensea-refresher
-## you can refresh blindbox with this
+### you can refresh blindbox with this
