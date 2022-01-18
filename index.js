@@ -16,9 +16,12 @@ const mainFunc = async (contractAddress, isERC, startTokenId, endTokenId) => {
         try {
             await page.goto(`https://opensea.io/assets/${!isERC ? "matic/" : ""}${contractAddress}/${i}`);
             await page.waitForSelector('[value="refresh"]');
-            await page.waitForTimeout(Math.floor(Math.random() * 5 + 1) * 1000);
             await page.click('[value="refresh"]');
             console.log("tokenId " + i + " finished")
+            if (i % 15 === 0) {
+                console.log("wait for 1 min to prevent opensea's server overload")
+                await page.waitForTimeout(60000)
+            }
         } catch (err) {
             console.log(err);
         }
